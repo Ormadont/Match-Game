@@ -11,6 +11,7 @@ body {
 /* instructions */
 .instructions h1,h4 {
   font-weight: bold;
+  margin-top: 0;
 }
 
 .instructions h1 {
