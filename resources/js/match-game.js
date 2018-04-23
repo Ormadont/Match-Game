@@ -5,7 +5,9 @@ let MatchGame = {};
   Renders a 4x4 board of cards.
 */
 
-$(document).ready(() =>{
+$(document).ready(()=>{
+
+
 
 });
 
@@ -15,6 +17,19 @@ $(document).ready(() =>{
 
 MatchGame.generateCardValues = function () {
 
+  const ar1 = []; //первый исходный массив вида 112233...
+  for (let i=0; i < 8; i++) {
+    ar1.push(i+1); ar1.push(i+1);
+  }
+
+  const ar2 = []; //второй массив, полученный из случайных элементов исходного массива
+  while (ar1.length>0) {
+    const r = Math.floor(Math.random()*ar1.length); //рандомный индекс первого массива
+    const rand_i = ar1.splice(r,1) //удалённый элемент (массив) первого массива для второго массива
+    ar2.push(rand_i[0]);
+  }
+
+  return ar2;
 };
 
 /*
